@@ -1,8 +1,8 @@
 (function () {
     const FPS = 60;
     const TICK_DURATION = 1 / FPS;
-    const TAMX = 640;
-    const TAMY = 480;
+    const TAMX = 800;
+    const TAMY = 600;
 
     const PIXELS_PER_METER = 15;
 
