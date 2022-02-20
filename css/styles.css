@@ -9,7 +9,53 @@
     overflow: auto;
     background-color: rgba(0, 0, 0, 0);
 }
+.modalrules {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0);
+}
+#IName {
+    margin-top: 5px;
+    border-radius: 10px;
+    background-color: rgb(166, 229, 253);
+    color: rgb(4, 0, 255);
+    text-align: center;
+    border: 1px solid rgb(2, 181, 252);
+}
+#IName:focus {
+    background-color: blue;
+    color: white;
+}
+
+#reset {
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgb(166, 229, 253);
+    border: 1px solid rgb(2, 181, 252);
+    color: rgb(4, 0, 255);
+}
+#reset:hover {
+    background-color: blue;
+    color: white;
+}
 #startGame {
+    cursor: pointer;
+    margin-right: 3%;
+    width: 100px;
+    background-color: rgb(2, 181, 252);
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0px 0px 50px rgb(2, 181, 252);
+}
+
+#rules {
     cursor: pointer;
     margin-right: 3%;
     width: 100px;
@@ -32,26 +78,65 @@
     background-color: blue;
     box-shadow: 0px 0px 50px blue;
 }
+#rules:hover {
+    opacity: 0.7;
+    background-color: blue;
+    box-shadow: 0px 0px 50px blue;
+}
 #startGame:hover {
     opacity: 0.7;
     background-color: blue;
     box-shadow: 0px 0px 50px blue;
 }
+#ul {
+    list-style-type: none;
+}
+li {
+    margin-top: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+li:hover {
+    color: blue;
+}
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: rgb(2, 181, 252);
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid rgb(2, 181, 252);
+    box-shadow: 0px 0px 50px rgb(2, 181, 252);
     width: 80%;
     opacity: 0.8;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+.modal-contentrules {
+    background-color: rgb(2, 181, 252);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid rgb(2, 181, 252);
+    box-shadow: 0px 0px 50px rgb(2, 181, 252);
+    width: 80%;
+    opacity: 0.8;
+    text-align: center;
+    color: rgb(255, 255, 255);
 }
 .close {
-    color: #aaa;
+    color: rgb(255, 255, 255);
     float: right;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
+}
+.closerules {
+    color: rgb(255, 255, 255);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close:hover {
+    color: rgb(25, 0, 255);
 }
 
 .hid {
@@ -73,7 +158,13 @@
     top: 50%;
     transform: translate(-50%, -50%);
 }
-
+a {
+    text-decoration: none;
+    color: white;
+}
+a:hover {
+    color: blue;
+}
 body {
     background: url(./yeti/back.jpg);
     box-shadow: inset 0 0 20px 20px rgba(0, 0, 0, 0.5);
@@ -95,7 +186,7 @@ body {
     background-color: white;
 }
 #preMountain {
-    background-color: black;
+    background: url(./mount.png);
     overflow: hidden;
     position: relative;
     border-radius: 20px;
@@ -124,11 +215,13 @@ body {
 }
 
 #gameover {
-    border: 1px solid black;
-    background-color: white;
+    border: 1px solid rgb(2, 181, 252);
+    background-color: rgb(255, 255, 255);
     padding: 5px 5px 5px 5px;
     opacity: 0;
+    box-shadow: 0px 0px 30px rgb(2, 181, 252);
     z-index: 2001;
+    border-radius: 15px;
 }
 .block {
     display: none;

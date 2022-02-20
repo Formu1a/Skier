@@ -51,7 +51,8 @@
         "rightmost",
     ];
     const DIR_ANGLES = [180, 202, 227, 270, 313, 338, 360];
-
+    const die = new Audio("../music/die.mp3");
+    const eat = new Audio("../music/eat1.mp3");
     const MAX_SPEED = 20 * TICK_DURATION;
     const TURBO_MAX_SPEED = 40 * TICK_DURATION;
     const ACCEL = 1 * TICK_DURATION;
@@ -688,6 +689,7 @@
 
         this.addHealth = function (amount) {
             this.health += amount;
+            eat.play();
             if (this.health > INITIAL_HEALTH) this.health = INITIAL_HEALTH;
         };
 
@@ -709,6 +711,7 @@
             this.element.style.opacity = 0;
             this.falling = this.dead = true;
             this.speed = this.maxSpeed = 0;
+            die.play();
         };
 
         this.getUp = function () {
@@ -873,11 +876,6 @@
         if (skier.dead) {
             document.getElementById("gameover").style.opacity = 1;
             document.querySelector("#modal").classList.remove("block");
-            addEventListener("keydown", (e) => {
-                if (e.keyCode === 32) {
-                    location.reload();
-                }
-            });
         }
 
         skier.updateChunks();
@@ -950,12 +948,15 @@ function res() {
             document.getElementById("ul").prepend(liFirst);
         }
     }
-    // b.push(document.getElementById("ul").children);
 }
 
-document.getElementById("resGame").addEventListener("click", res);
+document.getElementById("reset").addEventListener("click", () => {
+    alert("Result Saved");
+});
 
-// window.addEventListener("onbeforeunload", (e) => {
-//     e.preventDefault();
-//     alert("yveren ?");
-// });
+document.getElementById("resGame").addEventListener("click", res);
+addEventListener("keydown", (e) => {
+    if (e.keyCode === 72) {
+        location.reload();
+    }
+});

@@ -17,18 +17,18 @@
                 </div>
                 <div id="gameover" class="centered">
                     <div id="modal" class="block">
-                        Ваше имя:
+                        <span style="color: rgb(2, 181, 252)">Your name:</span>
                         <input type="text" id="IName" />
                         <input
                             id="reset"
                             type="button"
-                            value="Записать результат"
+                            value="Save result"
                             onclick="storeInfo()"
                         />
                     </div>
                     <div style="text-align: center; color: rgb(2, 181, 252)">
                         <big>GAME OVER</big><br />
-                        Press <strong>Space</strong> to try again
+                        Press <strong>H</strong> to try again
                     </div>
                 </div>
                 <div id="preMountain">
@@ -38,6 +38,27 @@
                             value="start game"
                             id="startGame"
                         />
+                        <input type="button" value="rules" id="rules" />
+                        <div id="myModalrules" class="modalrules">
+                            <div class="modal-contentrules">
+                                <span class="closerules">&times;</span>
+                                <ul id="ulrules">
+                                    <li>
+                                        Use <strong>A</strong>,
+                                        <strong>S</strong> and
+                                        <strong>D</strong> to change directions
+                                    </li>
+                                    <li>
+                                        Press <strong>F</strong> to toggle turbo
+                                    </li>
+                                    <li>
+                                        If you pick up a mushroom
+                                        <img src="css/mushroom.png" /> then you
+                                        will add HP
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                         <input type="button" value="result" id="resGame" />
                         <div id="myModal" class="modal">
                             <div class="modal-content">
@@ -53,19 +74,16 @@
             </div>
             <ul class="text">
                 <li>
-                    Use <strong>A</strong>, <strong>S</strong> and
-                    <strong>D</strong> to change directions
+                    <a href="https://github.com/Formu1a"
+                        ><strong>My GitHub</strong></a
+                    >
                 </li>
-                <li>Press <strong>F</strong> to toggle turbo</li>
                 <li>
-                    If you pick up a mushroom
-                    <img src="css/mushroom.png" /> then you will add HP
+                    <a href="https://www.linkedin.com/in/kirill-borisevich/"
+                        ><strong>My Linkedin</strong></a
+                    >
                 </li>
             </ul>
-            <br />
-            <div id="modal" class="">
-                <strong><span id="inner" style="color: white"></span></strong>
-            </div>
         </div>
         <script src="http://fe.it-academy.by/JQ/jquery.js"></script>
         <script src="js/ajax.js"></script>
