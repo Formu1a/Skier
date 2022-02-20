@@ -4,24 +4,51 @@
         <meta charset="utf-8" />
         <title>Ski</title>
         <link rel="stylesheet" href="css/styles.css" />
+        <style></style>
     </head>
     <body>
         <div class="centered">
             <div class="centered">
-                <div id="panel">
-                    <strong>Distance:</strong> 0 m<br />
+                <div id="panel" class="hid">
+                    <strong>Distance:</strong><span id="dist"></span><br />
                     <strong>Speed:</strong> 0 m/s<br />
                     <strong>HP:</strong>
                     3<br />
                 </div>
                 <div id="gameover" class="centered">
-                    <div style="text-align: center; color: rgb(2, 181, 252)">
-                        <big>GAME OVER</big>
+                    <div id="modal" class="block">
+                        Ваше имя:
+                        <input type="text" id="IName" />
+                        <input
+                            id="reset"
+                            type="button"
+                            value="Записать результат"
+                            onclick="storeInfo()"
+                        />
                     </div>
-                    Press <strong>Space</strong> to try again
+                    <div style="text-align: center; color: rgb(2, 181, 252)">
+                        <big>GAME OVER</big><br />
+                        Press <strong>Space</strong> to try again
+                    </div>
                 </div>
-                <div id="mountain">
-                    <div id="skier" />
+                <div id="preMountain">
+                    <div id="buttons">
+                        <input
+                            type="button"
+                            value="start game"
+                            id="startGame"
+                        />
+                        <input type="button" value="result" id="resGame" />
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <ul id="ul"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="mountain" class="hid">
+                        <div id="skier" />
+                    </div>
                 </div>
             </div>
             <ul class="text">
@@ -35,8 +62,14 @@
                     <img src="css/mushroom.png" /> then you will add HP
                 </li>
             </ul>
+            <br />
+            <div id="modal" class="">
+                <strong><span id="inner" style="color: white"></span></strong>
+            </div>
         </div>
-
+        <script src="http://fe.it-academy.by/JQ/jquery.js"></script>
+        <script src="js/ajax.js"></script>
         <script src="js/skifree.js"></script>
+        <script src="js/modal.js"></script>
     </body>
 </html>

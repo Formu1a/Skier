@@ -197,12 +197,6 @@
         },
     ];
 
-    addEventListener("keydown", (e) => {
-        if (e.keyCode === 32) {
-            location.reload();
-        }
-    });
-
     function getInterval(obData) {
         return Math.round(
             randomRange(
@@ -233,7 +227,7 @@
     var mountain;
     var skier;
 
-    var distanceTraveled = 0;
+    let distanceTraveled = 0;
     var panelSpeed = 0;
     var panelHealth = INITIAL_HEALTH;
     var updatePanelLoop;
@@ -242,7 +236,7 @@
         let panel = document.getElementById("panel");
         let color = panelHealth == 0 ? 'style="color:red"' : "";
 
-        panel.innerHTML = `<strong>Distance:</strong> ${distanceTraveled} m<br/>
+        panel.innerHTML = `<strong>Distance:</strong><span id="dist"> ${distanceTraveled} </span>m<br/>
 			<strong>Speed:</strong> ${panelSpeed} m/s<br/>
 			<strong ${color}>Health:</strong> ${panelHealth}/${INITIAL_HEALTH}<br/>`;
     }
@@ -878,6 +872,12 @@
     function run() {
         if (skier.dead) {
             document.getElementById("gameover").style.opacity = 1;
+            document.querySelector("#modal").classList.remove("block");
+            addEventListener("keydown", (e) => {
+                if (e.keyCode === 32) {
+                    location.reload();
+                }
+            });
         }
 
         skier.updateChunks();
@@ -922,3 +922,40 @@
 
     init();
 })();
+
+document.getElementById("startGame").addEventListener("click", () => {
+    document.getElementById("preMountain").classList.add("hid");
+    document.getElementById("mountain").classList.remove("hid");
+    document.getElementById("mountain").classList.add("vis");
+    document.getElementById("panel").classList.remove("hid");
+    document.getElementById("panel").classList.add("vis");
+});
+// let b = [];
+
+// console.log(b);
+function res() {
+    for (let i = 0; i < localStorage.length; i++) {
+        if (
+            document.getElementById("ul").children.length < localStorage.length
+        ) {
+            let liFirst = document.createElement("li");
+
+            liFirst.innerHTML =
+                "Name:" +
+                localStorage.key(i) +
+                " " +
+                " " +
+                "Result:" +
+                localStorage.getItem(localStorage.key(i));
+            document.getElementById("ul").prepend(liFirst);
+        }
+    }
+    // b.push(document.getElementById("ul").children);
+}
+
+document.getElementById("resGame").addEventListener("click", res);
+
+// window.addEventListener("onbeforeunload", (e) => {
+//     e.preventDefault();
+//     alert("yveren ?");
+// });
