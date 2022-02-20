@@ -95,9 +95,6 @@ li {
     margin-top: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-li:hover {
-    color: blue;
-}
 
 .modal-content {
     background-color: rgb(2, 181, 252);

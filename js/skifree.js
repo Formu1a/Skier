@@ -51,7 +51,7 @@
         "rightmost",
     ];
     const DIR_ANGLES = [180, 202, 227, 270, 313, 338, 360];
-    const die = new Audio("../music/die.mp3");
+    const died = new Audio("../music/die.mp3");
     const eat = new Audio("../music/eat1.mp3");
     const MAX_SPEED = 20 * TICK_DURATION;
     const TURBO_MAX_SPEED = 40 * TICK_DURATION;
@@ -711,7 +711,7 @@
             this.element.style.opacity = 0;
             this.falling = this.dead = true;
             this.speed = this.maxSpeed = 0;
-            die.play();
+            died.play();
         };
 
         this.getUp = function () {
