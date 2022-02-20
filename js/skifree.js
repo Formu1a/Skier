@@ -51,7 +51,7 @@
         "rightmost",
     ];
     const DIR_ANGLES = [180, 202, 227, 270, 313, 338, 360];
-    const died = new Audio("../music/die.mp3");
+
     const eat = new Audio("../music/eat1.mp3");
     const MAX_SPEED = 20 * TICK_DURATION;
     const TURBO_MAX_SPEED = 40 * TICK_DURATION;
@@ -711,7 +711,6 @@
             this.element.style.opacity = 0;
             this.falling = this.dead = true;
             this.speed = this.maxSpeed = 0;
-            died.play();
         };
 
         this.getUp = function () {
@@ -922,16 +921,13 @@
 })();
 
 document.getElementById("startGame").addEventListener("click", () => {
-    document.getElementById("preMountain").classList.add("hid");
-    document.getElementById("mountain").classList.remove("hid");
-    document.getElementById("mountain").classList.add("vis");
-    document.getElementById("panel").classList.remove("hid");
-    document.getElementById("panel").classList.add("vis");
+    click.play();
 });
-// let b = [];
 
-// console.log(b);
+let click = new Audio("../music/click.mp3");
+let mineMus = new Audio("../music/minecraft.mp3");
 function res() {
+    click.play();
     for (let i = 0; i < localStorage.length; i++) {
         if (
             document.getElementById("ul").children.length < localStorage.length
@@ -951,6 +947,7 @@ function res() {
 }
 
 document.getElementById("reset").addEventListener("click", () => {
+    click.play();
     alert("Result Saved");
 });
 
@@ -960,3 +957,23 @@ addEventListener("keydown", (e) => {
         location.reload();
     }
 });
+document.getElementById("mainPage").addEventListener("click", () => {
+    click.play();
+});
+
+document.getElementById("rules").addEventListener("click", () => {
+    click.play();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    mineMus.play();
+});
+
+function mineCraft() {
+    let checkBox = document.getElementById("music");
+    if (checkBox.checked) {
+        mineMus.play();
+    } else {
+        mineMus.pause();
+    }
+}

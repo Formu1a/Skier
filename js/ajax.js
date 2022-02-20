@@ -4,7 +4,7 @@ var stringName = "BORISEVICH_TEST_INFO";
 
 function storeInfo() {
     updatePassword = Math.random();
-    jQuery.ajax({
+    $.ajax({
         url: ajaxHandlerScript,
         type: "POST",
         cache: false,
@@ -25,7 +25,7 @@ function lockGetReady(callresult) {
             distance: document.getElementById("dist").textContent,
         };
         console.log(info);
-        jQuery.ajax({
+        $.ajax({
             url: ajaxHandlerScript,
             type: "POST",
             cache: false,
@@ -47,7 +47,7 @@ function updateReady(callresult) {
 }
 
 function restoreInfo() {
-    jQuery.ajax({
+    $.ajax({
         url: ajaxHandlerScript,
         type: "POST",
         cache: false,
