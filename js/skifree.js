@@ -948,12 +948,11 @@ function res() {
 
 document.getElementById("reset").addEventListener("click", () => {
     click.play();
-    alert("Result Saved");
 });
 
 document.getElementById("resGame").addEventListener("click", res);
 addEventListener("keydown", (e) => {
-    if (e.keyCode === 72) {
+    if (e.keyCode === 13) {
         location.reload();
     }
 });
