@@ -16,7 +16,8 @@ function storeInfo() {
 }
 
 function lockGetReady(callresult) {
-    if (callresult.error != undefined) alert(callresult.error);
+    if (callresult.error != undefined)
+        alert("You must wait a minute to record the result.");
     else {
         // нам всё равно, что было прочитано -
         // всё равно перезаписываем

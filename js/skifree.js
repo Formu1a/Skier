@@ -946,16 +946,21 @@ function res() {
     }
 }
 
+function mineCraft() {
+    let checkBox = document.getElementById("music");
+    if (checkBox.checked) {
+        mineMus.play();
+    } else {
+        mineMus.pause();
+    }
+}
+
 document.getElementById("reset").addEventListener("click", () => {
     click.play();
 });
 
 document.getElementById("resGame").addEventListener("click", res);
-addEventListener("keydown", (e) => {
-    if (e.keyCode === 13) {
-        location.reload();
-    }
-});
+
 document.getElementById("mainPage").addEventListener("click", () => {
     click.play();
 });
@@ -968,11 +973,8 @@ document.addEventListener("DOMContentLoaded", () => {
     mineMus.play();
 });
 
-function mineCraft() {
-    let checkBox = document.getElementById("music");
-    if (checkBox.checked) {
-        mineMus.play();
-    } else {
-        mineMus.pause();
+addEventListener("keydown", (e) => {
+    if (e.keyCode === 13) {
+        location.reload();
     }
-}
+});
